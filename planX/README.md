@@ -1,2 +1,0 @@
-# planx
-Diplomarbeit

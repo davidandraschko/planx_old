@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">planX</string>
-    <string name="buttonLogin">Anmelden</string>
-    <string name="buttonLoginFb">Mit Facebook anmelden</string>
-    <string name="logoutButton">Logout</string>
-</resources>
