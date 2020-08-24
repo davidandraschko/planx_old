@@ -3,4 +3,6 @@
     <string name="buttonLogin">Anmelden</string>
     <string name="buttonLoginFb">Mit Facebook anmelden</string>
     <string name="logoutButton">Logout</string>
+    <string name="facebook_app_id">1368683186856170</string>
+    <string name="fb_login_protocol_scheme">fb1368683186856170</string>
 </resources>
