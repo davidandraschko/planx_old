@@ -50,7 +50,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         ImageView imageViewPost = findViewById(R.id.imageViewPost);
         imageViewPost.setOnClickListener(this);
 
-        imageViewPb = findViewById(R.id.imageViewPb);
+        imageViewPb = findViewById(R.id.profile_image);
         getInstagramData(AccessToken.getCurrentAccessToken());
 
         textView = findViewById(R.id.textView);
