@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
                                 "user_birthday, ads_management, business_management, instagram_manage_insights," +
                                 "pages_manage_posts"));
 
+        checkLoginStatus();
+
         buttonLoginFb.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
@@ -72,4 +74,13 @@ public class MainActivity extends AppCompatActivity {
         callbackManager.onActivityResult(requestCode, resultCode, data);
         super.onActivityResult(requestCode, resultCode, data);
     }
+
+    private void checkLoginStatus() {
+        if (AccessToken.getCurrentAccessToken() != null) {
+            Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+            startActivity(intent);
+        }
+    }
+
+
 }

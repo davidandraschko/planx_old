@@ -141,7 +141,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(this, PostActivity.class);
             this.startActivity(intent);
             CustomIntent.customType(this, "left-to-right");
-        }
+    }
     }
 
 
