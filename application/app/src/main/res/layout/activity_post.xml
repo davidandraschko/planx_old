@@ -12,10 +12,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="117dp"
         android:layout_marginLeft="117dp"
-        android:layout_marginTop="93dp"
+        android:layout_marginTop="118dp"
         android:text="Facebook"
         app:layout_constraintStart_toEndOf="@+id/textView7"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewTime" />
 
     <EditText
         android:id="@+id/editTextCaption"
@@ -39,7 +39,7 @@
         android:layout_marginRight="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@drawable/ic_launcher_background" />
 
     <TextView
         android:id="@+id/textView3"
@@ -53,7 +53,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextCaption" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/hashtagSpinner"
         android:layout_width="312dp"
         android:layout_height="42dp"
         android:layout_marginStart="30dp"
@@ -71,20 +71,7 @@
         android:layout_marginTop="50dp"
         android:text="Schedule"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
-
-    <EditText
-        android:id="@+id/editTextDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:hint="Date"
-        android:inputType="date"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/hashtagSpinner" />
 
     <TextView
         android:id="@+id/textView6"
@@ -92,10 +79,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="75dp"
         android:text="Post on ..."
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewDate" />
 
     <TextView
         android:id="@+id/textView7"
@@ -169,4 +156,26 @@
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toEndOf="@+id/switch3"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/textViewDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="24dp"
+        android:text="Click to pick date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/textViewTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="73dp"
+        android:layout_marginLeft="73dp"
+        android:layout_marginTop="94dp"
+        android:text="Click to pick time"
+        app:layout_constraintStart_toEndOf="@+id/textViewDate"
+        app:layout_constraintTop_toBottomOf="@+id/hashtagSpinner" />
 </androidx.constraintlayout.widget.ConstraintLayout>

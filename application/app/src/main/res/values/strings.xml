@@ -5,4 +5,15 @@
     <string name="logoutButton">Logout</string>
     <string name="facebook_app_id">1368683186856170</string>
     <string name="fb_login_protocol_scheme">fb1368683186856170</string>
+
+    <string-array name="hashtag_presets">
+        <item>Trending Now</item>
+        <item>Photography</item>
+        <item>Gaming</item>
+        <item>Business</item>
+        <item>Fashion</item>
+        <item>Football</item>
+        <item>Sports</item>
+    </string-array>
+
 </resources>
