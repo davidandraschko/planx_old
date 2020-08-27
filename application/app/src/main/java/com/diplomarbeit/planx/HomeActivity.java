@@ -16,8 +16,10 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.facebook.AccessToken;
+import com.facebook.FacebookSdk;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
+import com.facebook.login.LoginManager;
 
 import org.json.JSONException;
 
@@ -35,6 +37,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     String profilePictureUrl;
 
     TextView textView;
+
+    LoginManager loginManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +58,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         getInstagramData(AccessToken.getCurrentAccessToken());
 
         textView = findViewById(R.id.textView);
+
 
     }
 
@@ -129,6 +134,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         if (view.getId() == R.id.buttonLogout) {
             Intent intent = new Intent(this, MainActivity.class);
             this.startActivity(intent);
+            loginManager.getInstance().logOut();
         }
 
         if(view.getId() == R.id.imageViewCalendar){
