@@ -18,6 +18,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -41,8 +42,7 @@ public class PostActivity extends AppCompatActivity {
     private TimePickerDialog.OnTimeSetListener timeSetListener;
 
     private ImageView imageViewPosting;
-    //int SELECT_PHOTO = 1;
-    //Uri uri;
+    private static final int GALLERY_REQUEST_CODE = 123;
 
     Context context = this;
 
@@ -57,14 +57,17 @@ public class PostActivity extends AppCompatActivity {
         spinner.setAdapter(adapter);
 
         imageViewPosting = findViewById(R.id.imageViewPosting);
-        /*imageViewPosting.setOnClickListener(new View.OnClickListener() {
+
+        imageViewPosting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View view) {
-                Intent intent = new Intent(Intent.ACTION_PICK);
-                intent.setType("image/");
-                startActivityForResult(intent, SELECT_PHOTO);
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent, "Pick an image"), GALLERY_REQUEST_CODE);
+
             }
-        });*/
+        });
 
 
         textViewDate = findViewById(R.id.textViewDate);
@@ -131,23 +134,14 @@ public class PostActivity extends AppCompatActivity {
         };
     }
 
-   /* @Override
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == SELECT_PHOTO && resultCode == RESULT_OK && data != null && data.getData() != null){
-            uri = data.getData();
-
-            try{
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
-                imageViewPosting.setImageBitmap(bitmap);
-                Log.i("Test", "Test");
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        if (requestCode == GALLERY_REQUEST_CODE && resultCode == RESULT_OK && data != null) {
+            Uri imageData = data.getData();
+            imageViewPosting.setImageURI(imageData);
         }
-    }*/
+    }
 
     public boolean onTouchEvent(MotionEvent touchevent){
         switch (touchevent.getAction()){

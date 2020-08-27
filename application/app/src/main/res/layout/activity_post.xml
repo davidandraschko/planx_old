@@ -39,7 +39,7 @@
         android:layout_marginRight="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/ic_launcher_background" />
+        android:background="@android:color/black" />
 
     <TextView
         android:id="@+id/textView3"
@@ -178,4 +178,5 @@
         android:text="Click to pick time"
         app:layout_constraintStart_toEndOf="@+id/textViewDate"
         app:layout_constraintTop_toBottomOf="@+id/hashtagSpinner" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
